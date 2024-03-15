@@ -36,12 +36,6 @@ export default function Home({ courses }: IHome) {
         <meta name="description" content="Katerina Kiseleva's Сalligraphy studio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <Header />
       <main className={`${styles.main} ${inter.className}`}>
@@ -78,7 +72,7 @@ export default function Home({ courses }: IHome) {
 
         <div className={styles.grid}>
           {courses.map((course) => (
-            <CourseCard course={course} />
+            <CourseCard course={course} key={course.title} />
           ))}
         </div>
       </main>
