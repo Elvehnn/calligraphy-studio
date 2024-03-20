@@ -1,12 +1,6 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
-import CourseCard, { Course } from '@/components/CourseCard/CourseCard';
 import Header from '@/components/Header/Header';
-
-export interface IHome {
-  courses: Course[];
-}
 
 export const getStaticProps = async () => {
   const response = await fetch('http://localhost:1337/api/courses');
@@ -23,9 +17,7 @@ export const getStaticProps = async () => {
   return { props: { courses: courses.data } };
 };
 
-export default function Home({ courses }: IHome) {
-  console.log(courses);
-
+export default function Home() {
   return (
     <>
       <Head>
@@ -56,22 +48,7 @@ export default function Home({ courses }: IHome) {
           </div>
         </div> */}
 
-        <div className={styles.center}>
-          <Image
-            className={styles.hero}
-            src="/hero.jpg"
-            alt="hero picture"
-            width={160}
-            height={160}
-            priority
-          />
-        </div>
-
-        <div className={styles.grid}>
-          {courses.map((course) => (
-            <CourseCard course={course} key={course.title} />
-          ))}
-        </div>
+        <h1 className={styles.grid}>CART</h1>
       </main>
     </>
   );

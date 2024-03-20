@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
 import CourseCard, { Course } from '@/components/CourseCard/CourseCard';
 import Header from '@/components/Header/Header';
@@ -55,17 +54,6 @@ export default function Home({ courses }: IHome) {
             </a>
           </div>
         </div> */}
-
-        <div className={styles.center}>
-          <Image
-            className={styles.hero}
-            src="/hero.jpg"
-            alt="hero picture"
-            width={160}
-            height={160}
-            priority
-          />
-        </div>
 
         <div className={styles.grid}>
           {courses.map((course) => (

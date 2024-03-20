@@ -1,12 +1,12 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
-import { Jost } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 
-const jost = Jost({ subsets: ['latin'] });
+const roboto = Roboto({ subsets: ['latin', 'cyrillic'], weight: ['400', '700'] });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={jost.className}>
+    <main className={roboto.className}>
       <Component {...pageProps} />
     </main>
   );
